@@ -160,7 +160,7 @@ This folder contains:
 ---
 
 ### 3. `Statistical Analysis Scripts.zip`
-This folder contains 15 Python scripts. They can be run in the same order. We used Google Co-lab to run the scripts. Whe nprompted, please upload the final_dataset.xls file.
+This folder contains 15 Python scripts. They can be run in the same order. We used Google Co-lab to run the scripts. Whe prompted, please upload the final_dataset.xls file.
 
 All scripts are modular, well-commented, and directly callable from notebooks or command line.
 
