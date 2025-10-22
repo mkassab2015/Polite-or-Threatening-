@@ -26,7 +26,7 @@ All data, scripts, and documentation provided here enable full replication and s
 The primary dataset used for all analyses, containing **480 LLM responses** (60 tasks × 2 tones × 4 models).  
 Each record corresponds to one model’s answer to a specific SE task prompt.  
 Metrics include verbosity, sentiment, politeness, safety flags, and toxicity probabilities.  
-Detailed schema and feature definitions are described in [`Dataset_Documentation.txt`](./Dataset_Documentation.txt):contentReference[oaicite:2]{index=2}.
+Detailed schema and feature definitions are described in `Dataset_Documentation.txt`.
 
 **Key Columns:**
 - `TaskID`, `TaskDescription`, `PromptTone`, `Model`, `ResponseText`
@@ -43,7 +43,42 @@ The dataset enables:
 
 ### 2. `Capstone Analysis-20250930T083101Z-1-001.zip`
 
-This repository contains a comprehensive analysis of AI model responses to different prompt tones, split from a Jupyter notebook into modular, reusable Python scripts. It contains:
+This repository contains a comprehensive analysis of AI model responses to different prompt tones, split from a Jupyter notebook into modular, reusable Python scripts. 
+
+🔧 Technical Details
+
+ Dependencies
+- pandas
+- matplotlib
+- seaborn
+- scipy (for statistical tests)
+- numpy
+
+ Features
+- **Non-interactive plotting**: Uses Agg backend for headless execution
+- **Modular design**: Shared utilities in `shared/` directory
+- **Error handling**: Comprehensive error checking and reporting
+- **Statistical analysis**: Includes t-tests, effect sizes, and descriptive statistics
+
+
+ 🎯 Usage Scenarios
+
+1. **Academic Research**: Understanding AI behavior under different prompt conditions
+2. **Safety Evaluation**: Assessing AI robustness to adversarial prompts
+3. **Model Comparison**: Benchmarking different AI models' behavioral patterns
+4. **Prompt Engineering**: Informing best practices for prompt design
+
+ 📝 Documentation
+
+Each analysis directory contains detailed README files explaining:
+- Purpose and methodology
+- Visualization interpretation
+- Expected patterns and research questions
+- Files generated and their meaning
+
+
+This folder contains:
+
 
 ## 📈 Analysis Details
 
@@ -118,62 +153,14 @@ This repository contains a comprehensive analysis of AI model responses to diffe
 - Model-specific length patterns
 - **Generated**: `response_length_analysis.png`
 
-## 🔧 Technical Details
-
-### Dependencies
-- pandas
-- matplotlib
-- seaborn
-- scipy (for statistical tests)
-- numpy
-
-### Features
-- **Non-interactive plotting**: Uses Agg backend for headless execution
-- **Modular design**: Shared utilities in `shared/` directory
-- **Error handling**: Comprehensive error checking and reporting
-- **Statistical analysis**: Includes t-tests, effect sizes, and descriptive statistics
-
-### File Structure
-Each analysis directory contains:
-- `*.py`: Main analysis script
-- `README.md`: Detailed explanation of the analysis
-- `*.png`: Generated visualization files
 
 
-## 🎯 Usage Scenarios
-
-1. **Academic Research**: Understanding AI behavior under different prompt conditions
-2. **Safety Evaluation**: Assessing AI robustness to adversarial prompts
-3. **Model Comparison**: Benchmarking different AI models' behavioral patterns
-4. **Prompt Engineering**: Informing best practices for prompt design
-
-## 📝 Documentation
-
-Each analysis directory contains detailed README files explaining:
-- Purpose and methodology
-- Visualization interpretation
-- Expected patterns and research questions
-- Files generated and their meaning
-
-## 🔬 Statistical Rigor
-
-- **Paired Design**: Utilizes the paired nature of the experimental design
-- **Effect Sizes**: Includes Cohen's d for practical significance
-- **Multiple Metrics**: Comprehensive behavioral assessment
-- **Model Comparison**: Systematic comparison across AI systems
-
----
-
-**Generated from Jupyter notebook**: `capstone_expirement_graphs.ipynb`
-**Dataset**: `final_dataset.csv`
-**Total Analyses**: 11 completed successfully
-**Generated Visualizations**: 21 PNG files
 
 
 ---
 
 ### 3. `Statistical Analysis Scripts.zip`
-  This folder contains 15 Python scripts. They can be run in the same order. We used Google Co-lab to run the scripts. Whe nprompted, please upload the final_dataset.xls file.
+This folder contains 15 Python scripts. They can be run in the same order. We used Google Co-lab to run the scripts. Whe nprompted, please upload the final_dataset.xls file.
 
 All scripts are modular, well-commented, and directly callable from notebooks or command line.
 
@@ -190,30 +177,6 @@ Includes:
 
 ---
 
-## Reproduction Environment
-
-### Requirements
-```bash
-Python >= 3.10
-pandas >= 2.2
-numpy >= 1.26
-scipy >= 1.13
-statsmodels >= 0.14
-matplotlib >= 3.9
-nltk >= 3.9
-detoxify >= 0.6
-vaderSentiment >= 3.3
-
-Setup
-git clone https://github.com/<username>/threatening-llms.git
-cd threatening-llms
-pip install -r requirements.txt
-
-Running the Analysis
-# Run core statistics
-python Statistical\ Analysis\ Scripts/paired_tests.py
-# Launch Jupyter for figure replication
-jupyter notebook Capstone\ Analysis/Exploratory_Analysis.ipynb
 
 ## Research Summary
 
